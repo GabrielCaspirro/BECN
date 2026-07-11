@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento da Qualidade da Água</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="container">
+
+        <div class="status-card" id="status-card">
+
+            <h1>Qualidade da Água</h1>
+
+            <div class=" status-circle" id="statusCircle">
+                💧
+            </div>
+
+            <h2 id="statusTexto">Ela está boa para uso</h2>
+
+            <p>Todos os parâmetros encontram-se dentro dos valores recomendados.</p>
+
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <span class="titulo">pH</span>
+                <span class="valor" id="ph">7.1</span>
+            </div>
+
+            <div class="info-card">
+                <span class="titulo">TDS</span>
+                <span class="valor" id="tds">580 ppm</span>
+            </div>
+
+            <div class="info-card">
+                <span class="titulo">Turbidez</span>
+                <span class="valor" id="turbidez">0.42 NTU</span>
+            </div>
+
+            <div class="info-card">
+                <span class="titulo">Temperatura</span>
+                <span class="valor" id="temperatura">23°C</span>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
