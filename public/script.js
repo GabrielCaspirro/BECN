@@ -114,8 +114,6 @@ eventSource.onmessage = (evento)=>{
 
 }
 
-setInterval(carregarDados,1000);
-
 eventSource.onerror = () => {
 
     console.log("Conexão com o servidor perdida.");
