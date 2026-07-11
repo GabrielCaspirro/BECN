@@ -102,9 +102,6 @@ function atualizarTela(dados){
     document.getElementById("turbidez").textContent =
         dados.turbidez + " NTU";
 
-    document.getElementById("temperatura").textContent =
-        dados.temperatura + " °C";
-
     atualizarQualidade(dados.qualidade);
 
 }
@@ -116,6 +113,8 @@ eventSource.onmessage = (evento)=>{
     atualizarTela(dados);
 
 }
+
+setInterval(carregarDados,1000);
 
 eventSource.onerror = () => {
 

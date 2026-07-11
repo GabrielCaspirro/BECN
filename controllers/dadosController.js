@@ -6,8 +6,7 @@ let dados = {
     ph: 7.1,
     turbidez: 0.42,
     tds: 580,
-    temperatura: 23,
-
+    
     qualidade: "boa",
 
     ultimaAtualizacao: new Date()
