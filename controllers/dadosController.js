@@ -3,8 +3,8 @@ let clientes = [];
 
 let dados = {
 
-    ph: 7.1,
-    turbidez: 0.42,
+    ph: null,
+    turbidez: null,
     tds: 580,
     
     qualidade: "boa",
@@ -14,6 +14,20 @@ let dados = {
 };
 
 function calcularQualidade(ph, turbidez, tds){
+
+    if(ph == null || turbidez == null){
+
+        if(tds <= Valores.tds.ideal)
+            return "boa";
+
+        if(tds <= Valores.tds.ideal + 100)
+            return "quase";
+
+        if(tds <= Valores.tds.ideal + 300)
+            return "abaixo";
+
+        return "ruim";
+    }
 
     if(
         ph >= Valores.ph.idealMin &&
