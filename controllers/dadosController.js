@@ -57,18 +57,26 @@ function calcularQualidade(ph, turbidez, tds){
 
 }
 
+exports.getDados = (req,res)=>{
+
+    res.json(dados);
+
+}
+
 exports.postDados = (req, res) => {
 
-    if (req.body.ph !== undefined) {
-        dados.ph = req.body.ph;
+    const body = req.body || {};
+
+    if (body.ph !== undefined) {
+        dados.ph = body.ph;
     }
 
-    if (req.body.turbidez !== undefined) {
-        dados.turbidez = req.body.turbidez;
+    if (body.turbidez !== undefined) {
+        dados.turbidez = body.turbidez;
     }
 
-    if (req.body.tds !== undefined) {
-        dados.tds = req.body.tds;
+    if (body.tds !== undefined) {
+        dados.tds = body.tds;
     }
 
     dados.qualidade = calcularQualidade(
@@ -80,9 +88,7 @@ exports.postDados = (req, res) => {
     dados.ultimaAtualizacao = new Date();
 
     clientes.forEach(cliente => {
-        cliente.write(
-            `data: ${JSON.stringify(dados)}\n\n`
-        );
+        cliente.write(`data: ${JSON.stringify(dados)}\n\n`);
     });
 
     res.json({
@@ -90,7 +96,7 @@ exports.postDados = (req, res) => {
         dados
     });
 
-}
+};
 
 exports.stream = (req, res) => {
 
