@@ -7,6 +7,6 @@ module.exports = {
         ideal: 1
     },
     tds: {
-        ideal: 200
+        ideal: 300
     }
 };
