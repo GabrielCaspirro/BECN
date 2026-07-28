@@ -15,6 +15,10 @@ let dados = {
 
 function calcularQualidade(ph, turbidez, tds){
 
+    //if(ph == null || turbidez == null || tds == null){
+        //return "aguardando";
+    //}
+
     if(ph == null || turbidez == null){
 
         if(tds <= Valores.tds.ideal)

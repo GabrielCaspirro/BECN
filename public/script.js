@@ -49,8 +49,20 @@ const estados = {
         fundo:["#ffe8e8","#ffbcbc","#ff7070","#d81b60"],
 
         bolha:"rgba(255,140,140,.35)"
-    }
+    },
 
+    aguardando:{
+
+        mensagem:"Aguardando leitura dos sensores",
+
+        circulo:"linear-gradient(135deg,#d9d9d9,#9a9a9a)",
+
+        brilho:"#bdbdbd",
+
+        fundo:["#f5f5f5","#e4e4e4","#d3d3d3","#bdbdbd"],
+
+        bolha:"rgba(255,255,255,.35)"
+    }
 };
 
 async function carregarDados(){
@@ -94,13 +106,19 @@ function atualizarQualidade(estado){
 function atualizarTela(dados){
 
     document.getElementById("ph").textContent =
-        dados.ph;
+        dados.ph === null
+            ? "Aguardando..."
+            : `${dados.ph}`;
 
     document.getElementById("tds").textContent =
-        dados.tds + " ppm";
+        dados.tds === null
+            ? "Aguardando..."
+            : `${dados.tds} ppm`;
 
     document.getElementById("turbidez").textContent =
-        dados.turbidez + " NTU";
+        dados.turbidez === null
+            ? "Aguardando..."
+            : `${dados.turbidez} NTU`;
 
     atualizarQualidade(dados.qualidade);
 
