@@ -17,21 +17,18 @@ function calcularQualidade(ph, turbidez, tds){
 
     //if(ph == null || turbidez == null || tds == null){
         //return "aguardando";
-    //}
+    //=}
 
-    if(ph == null || turbidez == null){
+    if(tds <= Valores.tds.ideal)
+        return "boa";
 
-        if(tds <= Valores.tds.ideal)
-            return "boa";
+    if(tds <= Valores.tds.ideal + 100)
+        return "quase";
 
-        if(tds <= Valores.tds.ideal + 100)
-            return "quase";
+    if(tds <= Valores.tds.ideal + 300)
+        return "abaixo";
 
-        if(tds <= Valores.tds.ideal + 300)
-            return "abaixo";
-
-        return "ruim";
-    }
+    return "ruim";
 
     if(
         ph >= Valores.ph.idealMin &&

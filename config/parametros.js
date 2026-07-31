@@ -4,7 +4,7 @@ module.exports = {
         idealMax: 8.5
     },
     turbidez: {
-        ideal: 1
+        ideal: 3
     },
     tds: {
         ideal: 300
